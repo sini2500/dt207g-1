@@ -2,9 +2,8 @@
 <html lang="sv">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="/src/style.css">
+  <link rel="stylesheet" href="style.css">
   <title>Kurser - DT207G 1</title>
 </head>
 
@@ -13,26 +12,38 @@
 
     <h1>Mina kurser</h1>
 
-    <form id="course-form">
-      <input id="code" placeholder="Kurskod" required />
-      <input id="name" placeholder="Kursnamn" required />
+    <div id="course-list">
 
-      <select id="progression" required>
-        <option value="" disabled selected>Välj progression</option>
-        <option value="A">A</option>
-        <option value="B">B</option>
-        <option value="C">C</option>
-      </select>
+      <% if (courses.length === 0) { %>
+        <p>Inga kurser sparade ännu.</p>
+      <% } %>
 
-      <input id="syllabus" placeholder="URL till kursplan" required />
-      <button type="submit">Lägg till kurs</button>
-    </form>
+      <% courses.forEach(course => { %>
+        <div class="course-card">
 
-    <div id="course-list"></div>
+          <h3>
+            <%= course.coursename %> (<%= course.coursecode %>)
+          </h3>
+
+          <p>Progression: <%= course.progression %></p>
+
+          <div class="actions">
+            <a href="<%= course.syllabus %>" target="_blank">
+              <button>Kursplan</button>
+            </a>
+
+            <a href="/delete/<%= course.id %>">
+              <button class="delete">Radera</button>
+            </a>
+          </div>
+
+        </div>
+      <% }) %>
+
+    </div>
+
+    <a href="/ny"><button>Lägg till kurs</button></a>
 
   </div>
-
-  <script type="module" src="/src/main.ts"></script>
 </body>
-
 </html>

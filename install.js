@@ -19,6 +19,14 @@ db.serialize(()=>{
         );
     `);
 
+    db.run(`
+        INSERT INTO courses (coursecode, coursename, syllabus, progression)
+        VALUES 
+        ('DT207G', 'Backend-baserad webbutveckling', 'https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/DT207G/', 'B'),
+        ('DT084G', 'Introduktion till programmering i JavaScript', 'https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/DT084G/', 'A'),
+        ('DT200G', 'Grafisk teknik för webb', 'https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/DT200G/', 'B')
+    `);
+
 });
 
 db.close();
