@@ -1,6 +1,5 @@
 const express = require("express");
-const bodyParser = require("body-parser");
-const sqlite3 = require("sqlite3");
+const routes = require("./routes");
 
 const app = express();
 const PORT = 3000;
@@ -8,15 +7,15 @@ const PORT = 3000;
 // Statiskt
 app.use(express.static("public"));
 
+// Post-hantering
+app.use(express.urlencoded({extended: true}))
+
 // Views
 app.set("view engine", "ejs");
 app.set("views", "views");
 
 // Routes
-app.use("routes.js");
-
-// Post-hantering
-app.use(bodyParser.urlencoded({extended: true}))
+app.use("/", routes);
 
 // Starta
 app.listen(PORT, () => {
