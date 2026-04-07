@@ -11,12 +11,16 @@
   <div id="app">
 
     <h1>Mina kurser</h1>
+    <% if (msg) { %>
+        <p><%= msg %></p>
+        <br>
+    <% } %>
+
+    <% if (courses.length === 0) { %>
+      <p>Inga kurser sparade ännu.</p>
+    <% } %>
 
     <div id="course-list">
-
-      <% if (courses.length === 0) { %>
-        <p>Inga kurser sparade ännu.</p>
-      <% } %>
 
       <% courses.forEach(course => { %>
         <div class="course-card">

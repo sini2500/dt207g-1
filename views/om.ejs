@@ -12,11 +12,27 @@
 
     <h1>Om uppgiften</h1>
 
-    <p>För den här uppgiften skulle vi skapa en liten app för att lägga till och ta bort kurser i en databas.</p>
-    <p>SQLite har använts för databasen, express och ejs för sidrendering.</p>
-    <p>CSS och html återanvändes från en tidigare uppgift, så minimal tid behövdes för det.</p>
-    <p>Det största besväret var att hitta rätt syntax för att jobba med databasen i express router.</p>
-    <p>Det är tydligt att man kan få mycket gjort med några få byggstenar.</p>
+    <div style="text-align: left;">
+      <p>För den här uppgiften skulle vi skapa en liten app för att lägga till och ta bort kurser i en databas.</p>
+      <p>SQLite har använts för databasen, express och ejs för sidrendering.</p>
+      <p>CSS och html återanvändes från en tidigare uppgift, så minimal tid behövdes för det.</p>
+      <p>Validering av data görs på serversidan. Dessa situationer har testats:</p>
+      <ul>
+        <li>Kurskoder måste vara unika</li>
+        <li>Alla fält måste anges i formuläret</li>
+        <li>Länk till kursplan måste börja med http</li>
+        <li>Det finns en array med tillåtna bokstäver för progression (A, B, C)</li>
+        <li>Fel visas när man försöker ta bort en kurs som inte finns</li>
+        <li>Fel visas om databasen inte finns, eller om sql ger error</li>
+        <li>404-sida visas om man försöker gå till en route som inte finns</li>
+      </ul>
+      <p>Två metoder har använts för att visa meddelanden.<br>
+        För startsidan skickas meddelande med i query-parameter eftersom res.redirect() används.<br>
+        På ny-sidan skickas de som { error } eftersom res.render() används.</p>
+      <p>Om det skulle gå riktigt illa används res.send() så ingen sidmall laddas, t.ex om databasen inte finns.</p>
+      <p>Det största besväret var att hitta rätt syntax för att jobba med databasen i express router.</p>
+      <p>Det blev tydligt under arbetet att man kan få mycket gjort med några få byggstenar.</p>
+    </div>
     <br>
     <a href="/"><button>Tillbaka till listan</button></a>
 

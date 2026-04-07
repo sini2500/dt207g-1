@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="/style.css">
+  <title>Ny kurs</title>
+</head>
+
+<body>
+  <div id="app">
+
+    <h1>Ny kurs</h1>
+    <% if (error) { %>
+    <p class="error"><%= error %></p>
+    <br>
+    <% } %>
+
+    <form id="course-form" method="POST">
+        <input id="code" name="coursecode" placeholder="Kurskod" required />
+        <input id="name" name="coursename" placeholder="Kursnamn" required />
+
+        <select id="progression" name="progression" required>
+            <option value="" disabled selected>Välj progression</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select>
+
+        <input id="syllabus" name="syllabus" placeholder="URL till kursplan" required />
+        <button type="submit">Lägg till kurs</button>
+    </form>
+
+    <a href="/"><button>Tillbaka till listan</button></a>
+
+
+  </div>
+</body>
+</html>

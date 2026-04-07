@@ -11,7 +11,7 @@ db.serialize(()=>{
     db.run(`
         CREATE TABLE courses (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            coursecode TEXT NOT NULL,
+            coursecode TEXT NOT NULL UNIQUE,
             coursename TEXT NOT NULL,
             syllabus TEXT NOT NULL,
             progression TEXT NOT NULL,
