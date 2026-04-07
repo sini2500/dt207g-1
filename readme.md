@@ -2,7 +2,7 @@
 
 Det här är ett projekt för kursen backend-baserad webbutveckling, VT 2026.
 
-Webbplatsen är publicerad på ???: https://???/
+Webbplatsen är publicerad på Render: https://sini2500-dt207g-1.onrender.com
 
 ---
 
