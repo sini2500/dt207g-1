@@ -31,4 +31,9 @@ Om det skulle gå riktigt illa används res.send() så ingen sidmall laddas, t.e
 
 Det största besväret var att hitta rätt syntax för att jobba med databasen i express router.
 
+Att publicera på Render var inte helt smärtfritt heller.
+* De hade inte stöd för SQLite3 v6, så fick gå ner till v5.*, det var något om GLIBC-versionen på servern.
+* Deras gratis konto inkluderar inte lagring, så nu skickar jag med sqlite-filen via git-repot varje gång appen publiceras.
+* Detta skulle såklart leda till problem för ett seriöst projekt, men det funkar för den här uppgiften i alla fall.
+
 Det blev tydligt under arbetet att man kan få mycket gjort med några få byggstenar.
