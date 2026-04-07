@@ -21,13 +21,11 @@
       <% courses.forEach(course => { %>
         <div class="course-card">
 
-          <h3>
-            <%= course.coursename %> (<%= course.coursecode %>)
-          </h3>
+          <h3><%= course.coursename %> (<%= course.coursecode %>)</h3>
 
           <p>Progression: <%= course.progression %></p>
 
-          <div class="actions">
+          <div>
             <a href="<%= course.syllabus %>" target="_blank">
               <button>Kursplan</button>
             </a>

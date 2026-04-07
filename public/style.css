@@ -82,6 +82,7 @@ button:active {
 #course-list {
   display: grid;
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 @media (min-width: 600px) {
