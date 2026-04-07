@@ -30,9 +30,28 @@ router.get("/", (req, res) => {
 
 
 // radera, post, borttagning av kurs med id
+router.get("/radera/:id", (req, res) => {
 
+  // förebered fråga
+  const id = req.params.id;
+  const sql = "DELETE FROM courses WHERE id = ?";
 
-// 404, get, sidan finns inte
+  // ta bort från databas
+  db.run(sql, [id], (err) => {
+    if (err) {
+      return res.send("Kunde inte radera kursen");
+    }
+
+    res.redirect("/");
+  });
+});
+
+// om, get, en sida om projektet
+router.get("/om", (req, res) => {
+    res.render("om");
+});
+
+// 404, status, sidan finns inte
 router.use((req, res) => {
   res.status(404).render("404");
 });
