@@ -76,27 +76,6 @@ input:focus, select:focus {
   box-shadow: 0 0 0 2px rgba(7, 6, 20, 0.15);
 }
 
-button {
-  margin-top: 0.5rem;
-  padding: 0.75rem;
-  border-radius: 8px;
-  border: none;
-  background: #08060d;
-  color: #fff;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.05s;
-}
-
-button:hover {
-  background: #605d68;
-}
-
-button:active {
-  transform: scale(0.98);
-}
-
 /* Kurslistan */
 #course-list {
   display: grid;
@@ -131,7 +110,7 @@ button:active {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
 }
 
-.course-card h3 {
+.course-card h2 {
   font-size: 1.25rem;
   margin-bottom: 0.25rem;
 }
@@ -140,19 +119,35 @@ button:active {
   margin-bottom: 0.25rem;
 }
 
-.course-card a {
-  font-size: 0.95rem;
-  color: #08060d;
-  text-decoration: none;
+.course-card .actions {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  height: auto;
 }
 
-.course-card a:hover {
+/* Knappar */
+
+.btn {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: none;
+  background: #08060d;
+  color: #fff;
+  font-size: 0.95rem;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.05s;
+  height: 42px;
+}
+
+.btn:hover {
+  background: #605d68;
   text-decoration: underline;
 }
 
-.course-card button {
-  margin-top: 0.6rem;
-  height: 42px;
+.btn:active {
+  transform: scale(0.98);
 }
 
 .delete { 

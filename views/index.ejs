@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/style.css">
   <title>Kurser - DT207G 1</title>
 </head>
@@ -25,18 +25,14 @@
       <% courses.forEach(course => { %>
         <div class="course-card">
 
-          <h3><%= course.coursename %> (<%= course.coursecode %>)</h3>
+          <h2><%= course.coursename %> (<%= course.coursecode %>)</h2>
 
           <p>Progression: <%= course.progression %></p>
 
-          <div>
-            <a href="<%= course.syllabus %>" target="_blank">
-              <button>Kursplan</button>
-            </a>
+          <div class="actions">
+            <a class="btn" href="<%= course.syllabus %>" target="_blank">Kursplan</a>
 
-            <a href="/radera/<%= course.id %>">
-              <button class="delete">Radera</button>
-            </a>
+            <a class="btn delete" href="/radera/<%= course.id %>">Radera</a>
           </div>
 
         </div>
@@ -44,7 +40,7 @@
 
     </div>
 
-    <a href="/ny"><button>Lägg till kurs</button></a>
+    <a class="btn" href="/ny">Lägg till kurs</a>
     <br>
     <a href="/om">Läs mer om uppgiften</a>
 
